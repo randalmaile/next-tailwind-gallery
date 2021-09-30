@@ -1,9 +1,7 @@
 import Image from "next/image";
-// pages/index.js
+import WithoutMenu from "../components/without-menu";
 
-import WithMenu from "../components/with-menu";
-
-export default function IndexPage() {
+export default function CardsPage() {
   return (
     <>
       <div className="flex justify-center md:justify-end">
@@ -32,7 +30,6 @@ export default function IndexPage() {
         <h4 className="pb-2 mt-12 font-bold border-b border-gray-200">
           Latest Recipes
         </h4>
-
         <div className="grid gap-10 mt-8 lg:grid-cols-3">
           <div className="card hover:shadow-lg">
             <Image
@@ -123,10 +120,10 @@ export default function IndexPage() {
           </div>
         </div>
 
-        <h4 className="pb-2 mt-12 font-bold border-b border-gray-200">
+        {/* Most popular cards! */}
+        {/* <h4 className="pb-2 mt-12 font-bold border-b border-gray-200">
           Most Popular
         </h4>
-
         <div className="grid gap-10 mt-8 lg:grid-cols-3">
           <div className="card hover:shadow-lg">
             <Image
@@ -217,18 +214,12 @@ export default function IndexPage() {
               <span>25 mins</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="flex justify-center mt-12">
-        <div className="inline-block transition duration-300 ease-out transform btn bg-secondary-100 text-secondary-200 hover:shadow-inner hover:scale-125 hover:bg-opacity-50">
-          Load more
-        </div>
+        </div> */}
       </div>
     </>
   );
 }
 
-IndexPage.getLayout = function getLayout(page) {
-  return <WithMenu>{page}</WithMenu>;
+CardsPage.getLayout = function getLayout(page) {
+  return <WithoutMenu>{page}</WithoutMenu>;
 };
